@@ -1,0 +1,25 @@
+<!-- views/tasks/new.html.erb -->
+<h1>Nouvelle tâche</h1>
+
+<%= form_with model: @task do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Retour à la liste des tâches', tasks_path %>

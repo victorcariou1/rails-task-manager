@@ -1,0 +1,21 @@
+<p>
+  <strong>Titre :</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Détails :</strong>
+  <%= @task.details %>
+</p>
+
+<p>
+  <strong>Terminée :</strong>
+  <%= @task.completed ? 'Oui' : 'Non' %>
+</p>
+
+<%= link_to 'Modifier', edit_task_path(@task) %> |
+<%= link_to 'Retour', tasks_path %>
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
